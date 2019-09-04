@@ -10,4 +10,4 @@ age = int(input("Hur gammal är du "))
 # skriv ut om du är 18 eller inte
 print("hajsan", Ahmad,"vällkommen. ")
 
-print("ahmad",19980411, "21")
+print(
