@@ -1,2 +1,3 @@
-print("Ahmad")
-name = ("Ahmad")
+print("ahmad")
+print("mirzad")
+print("21")
