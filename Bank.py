@@ -1,12 +1,12 @@
 
-user = "AhmadMirzad"
-userName = (input("write in your username:"))
-if user != userName:
-    exit()
+user = "AhmadMirzad" # En sträng variabel som innehåller en användernamn
+userName = (input("write in your username:")) # Input är en funktion som frågar användaren om att skriva in sitt användernamn
+if user != userName:  # If (om) är en vilkor satts och det här är != inte lika med tecken. Här frågas om user är inte lika med username stäng av programmet.
+    exit() # gå ut eller stäng av.
 
-hometown = "Kabul"
-town = input("where is your hometown?:")
-if town != hometown:
+hometown = "Kabul" # En variabel som innehåller en datatyp av sträng. Den variabeln ska vara en säkerhet fråga till användaren.
+town = input("where is your hometown?:") # Input en funktion som frågar användare att skriva in sitt hemstad.
+if town != hometown: # En vilkor satts som säkerställer om användaren skriver fel hemstaden logas den ut med hjälp exit().
     exit()
 
 age = 21
@@ -20,9 +20,9 @@ if userbank != bank:
     exit()
 
 
-pin = 1234
-userPin = int(input("write in your password:"))
-if pin != userPin:
+pin = 1234 # En integer eller heltal variabel som innehåller lösenord till användaren som vill loga in i programmet.
+userPin = int(input("write in your password:")) # int och input eller en heltal och en funktion som båda vill underlätta fär användaren
+if pin != userPin:                                                                              # skriva in lösenordet med heltal
     exit()    
 print("Dear Ahmad Mirzad wellcome to your bank!")
 
