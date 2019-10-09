@@ -31,20 +31,20 @@ print("Dear Ahmad Mirzad wellcome to your bank!") # Skriver ut ett meddelande ti
 try:
     with open("balance.txt", "r")as balanceFile: # vill läsa en fil som heter banlance.txt med hjälp av ("r")
         try:
-            balance = balanceFile.readline()  
-            balance = float(balance)
+            balance = balanceFile.readline()  # Försöker läsa filen
+            balance = float(balance) # Balance ska läsas i decimal
         except (ValueError): # try och except är för felhantering. 
-            print("File corrupt")
+            print("File corrupt") # om det händer nåt fel då skrivas ut File corrupt istället för andra varningar.
             balance = 0.0 # om det inte finns en fil med namnen balance.txt då sättas balance till 0.0
 except (FileNotFoundError):
     print("FIlen fanns inte") 
     balance = 0.0
-menu = 0
+menu = 0 # Ett variabel
 
 while menu != 3: # while loopen kör runt tills man når 3
-    print("Ditt saldo är:", balance) 
-    menu = int(input("skriv ditt val:[1,2,3] "))
-    if menu == 1:
+    print("Ditt saldo är:", balance) # visra hur mycket vi har i kontot. 
+    menu = int(input("skriv ditt val:[1,2,3] ")) # 
+    if menu == 1: 
         balance = balance + float(input("hur mycket vill du sätta in:"))
 
     elif menu == 2:
@@ -56,7 +56,7 @@ while menu != 3: # while loopen kör runt tills man når 3
         print("Fel eller avslut")
         try:
             with open("balance.txt", "w")as balanceFile: # vill skriva balance.txt om det inte finns då skapar den med hjälp av ("w")
-                balanceFile.write(str(balance)) 
+                balanceFile.write(str(balance)) # Skriver balnacen i sträng.
         except (FileNotFoundError):
             print("Ingen fil") 
 
