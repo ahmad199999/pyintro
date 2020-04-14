@@ -1,8 +1,4 @@
 
-
-
-
-
 Meny = True
 option = 0
 print("Hej och Välkommen! ")
@@ -14,8 +10,10 @@ Vill du kolla upp alla ord i lexikon med dessa betydelse [2]
 Saknas ord i lexikon skriv till oss [3]
 Vill du avsluta programmet [4]
 Ditt Val:''')
+    if option > "4":
+        print("Du måste välja ett tal mellan 1 och 4!\n ")
 
-    if option == "1":
+    elif option == "1":
         import json
         from difflib import get_close_matches
         print("Welcome to longman dictionary!")
@@ -48,8 +46,8 @@ Ditt Val:''')
     elif option == "3":
         import os
         nyord = input("Skriv ditt nya ord!  ")
-        print("ditt nya ord sparas i en mapp! ")
-        filename = input("Vad ska hetta mappen!  ") + ".txt"
+        print("Ditt nya ord sparas i en fil! ")
+        filename = input("Vad ska hetta filen!  ") + ".txt"
         print("Vi har fått orden.\nTack för ditt samverkan")
         myfile = open(filename, "w")
         myfile.write(nyord)
