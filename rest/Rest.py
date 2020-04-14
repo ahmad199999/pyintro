@@ -9,10 +9,10 @@ print("Hej och Välkommen! ")
 print("Du har fyra val!")
 while Meny:
     option = input('''
-Översättning från engelska till engelska [1] 
-Att känna till alla ord i ordboken [2]
-[3]spara loggar till fil
-[4]Avsluta programmet
+Lexikon Engelska till Engelska [1] 
+Vill du kolla upp alla ord i lexikon med dessa betydelse [2]
+Saknas ord i lexikon skriv till oss [3]
+Vill du avsluta programmet [4]
 Ditt Val:''')
 
     if option == "1":
@@ -46,7 +46,15 @@ Ditt Val:''')
         Meny = False
                    
     elif option == "3":
-        f = open("wiki.txt", "r")
+        import os
+        nyord = input("Skriv ditt nya ord!  ")
+        print("ditt nya ord sparas i en mapp! ")
+        filename = input("Vad ska hetta mappen!  ") + ".txt"
+        print("Vi har fått orden.\nTack för ditt samverkan")
+        myfile = open(filename, "w")
+        myfile.write(nyord)
+        myfile.close()
+        Meny = False
         
     elif option == "4":
         print("Programmet avslutas Välkommen åter")
@@ -55,6 +63,7 @@ Ditt Val:''')
 
     
     
+
         
 
 
