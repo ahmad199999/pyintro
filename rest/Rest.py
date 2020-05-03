@@ -1,6 +1,6 @@
 
-Meny = True
-option = 0
+Meny = True # Här skapar jag ett variable som har ett värde på True eller boolean. Denna variable behövs i vårt while loop. 
+option = 0    # 
 print("Hej och Välkommen! ")
 print("Du har fyra val!")
 while Meny:
