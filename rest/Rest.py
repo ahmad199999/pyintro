@@ -18,9 +18,12 @@ Ditt Val:''')
     elif option == "1":  # Här om option är lika med 1 då får man tillgång till ett Engleska lexikon. 
         import json # Vi laddar json modulen för att kunna använda våran data som vi har. Vårna data är json fil format. Denna modul är mycket användarbart för våran programpygame.
         # Våran data är baserad på key and value. Man skriver ett Ord (Key) och sen man får dess Betydelse (Value) som vran lexikon är baserad på. 
-        from difflib import get_close_matches
-        print("Welcome to longman dictionary!")
-        mydata = json.load(open("data.json"))
+        from difflib import get_close_matches # difflib kan används som ett komparator den jämför filer. Från difflib laddar vi get_close_mutches för att kunna göra våran 
+        #Lexikon lite smartare. som till ex om nån skiver waterr med två rr då ger lexikon ett förslag som är korrekt som water eller om det finns nån annan ord som är nära 
+        #water ger den förslag. 
+        print("Welcome to longman dictionary!") #Om användaren väljar 1 då skrivs denna mening först. 
+        mydata = json.load(open("data.json")) #Här skapar vi ett variable och inne i variable öppnar våran json fil som vi har. Vi öppnar den i json.load för att kunna 
+        #roppa efter den del av data som vi vill.
         
         def translate(vocabulary):
             vocabulary = vocabulary.lower()
