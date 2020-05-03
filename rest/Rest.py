@@ -1,8 +1,8 @@
 
 Meny = True # Här skapar jag ett variable som har ett värde på True eller boolean. Denna variable behövs i vårt while loop. 
-option = 0    # 
-print("Hej och Välkommen! ")
-print("Du har fyra val!")
+option = 0    #  Ett annat variable som har värde 0. 
+print("Hej och Välkommen! ")  # Den här meddalandet skrivs när programmet startas.
+print("Du har fyra val!")  ## Den här meddalandet skrivs när programmet startas.
 while Meny:
     option = input('''
 Lexikon Engelska till Engelska [1] 
