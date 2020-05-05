@@ -29,40 +29,41 @@ Ditt Val:''')
             vocabulary = vocabulary.lower() #Variable som är lika med små bokstav som vi representerar ett ord i våra data.
             if vocabulary in mydata: # här har vi en variable och våran data som innehåller Englska ord.
                 return mydata[vocabulary] # Om den ord som vi söker finns i database printa den. 
-            elif len(get_close_matches(vocabulary, mydata.keys())) > 0:
-                yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(vocabulary, mydata.keys())[0])
-                if yn == "Y":
-                    return mydata[get_close_matches(vocabulary, mydata.keys())[0]]
-                elif yn == "N":
+            elif len(get_close_matches(vocabulary, mydata.keys())) > 0: # funktion för att hämta liknande ord från ordboken 
+                yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(vocabulary, mydata.keys())[0]) # när funktion ger förslag och n betyder nej och y yes.
+                if yn == "Y": #Om yes den går ett rad ner och läser.
+                    return mydata[get_close_matches(vocabulary, mydata.keys())[0]] 
+                elif yn == "N": #Om no eller nej den printer nedan raden.
                     return "the vocabulary may not exit in dictionary or dubble check the word."
                 else:
-                    return " We did not understand your word" 
+                    return " We did not understand your word" #Om användaren väljer annant än da två val, skiver nedre raden.
             else:
                  return "the vocabulary may not exit in dictionary or dubble check the word."
-        vocabulary = input("Enter an English word:  ")
-        print(translate(vocabulary))
-        Meny = False
+        vocabulary = input("Enter an English word:  ") # Här fråga användaren att skriv ett ord på englska. 
+        print(translate(vocabulary)) # Om användaren skriver ett ord som finns i mydata eller database då printas svaret
+        Meny = False # Programmet stängs ner.
 
-    elif option == "2":
-        import json
-        mydata = json.load(open("data.json"))
-        print(mydata)
-        Meny = False
+    elif option == "2": #om option är lika med 2 då läser nedre raden. laddas våran data up.
+        import json 
+        mydata = json.load(open("data.json"))  #laddas våran data up. vi har en variable som bär våran data i sig.
+        print(mydata) #vi säger åt programmet att läsa våran data. 
+
+        Meny = False # Programmet stängs ner.
                    
-    elif option == "3":
-        import os
-        nyord = input("Skriv ditt nya ord!  ")
-        print("Ditt nya ord sparas i en fil! ")
-        filename = input("Vad ska hetta filen!  ") + ".txt"
-        print("Vi har fått orden.\nTack för ditt samverkan")
-        myfile = open(filename, "w")
-        myfile.write(nyord)
-        myfile.close()
-        Meny = False
+    elif option == "3": #om option är lika med 3 då läser nedre raden.
+        #import os
+        nyord = input("Skriv ditt nya ord!  ") #ett variable som bär våran input. vi tar en inputfrån användaren.
+        print("Ditt nya ord sparas i en fil! ") #
+        filename = input("Vad ska hetta filen!  ") + ".txt" #vi tar en input från avändaren med index txt.
+        print("Vi har fått orden.\nTack för ditt samverkan") 
+        myfile = open(filename, "w") #Skapas ett fil
+        myfile.write(nyord) #nya orden från användaren skrivs.
+        myfile.close() #och sen stängs
+        Meny = False # Programmet stängs ner.
         
-    elif option == "4":
+    elif option == "4":  #om option är lika med 4 då läser nedre raden.
         print("Programmet avslutas Välkommen åter")
-        Meny = False
+        Meny = False # Programmet stängs ner.
 
 
     
