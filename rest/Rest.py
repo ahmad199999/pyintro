@@ -26,9 +26,9 @@ Ditt Val:''')
         #roppa efter den del av data som vi vill.
         
         def translate(vocabulary): #Här skapar vi ett funktion 
-            vocabulary = vocabulary.lower() #Variable som är lika med små bokstav,.
-            if vocabulary in mydata: 
-                return mydata[vocabulary]
+            vocabulary = vocabulary.lower() #Variable som är lika med små bokstav som vi representerar ett ord i våra data.
+            if vocabulary in mydata: # här har vi en variable och våran data som innehåller Englska ord.
+                return mydata[vocabulary] # Om den ord som vi söker finns i database printa den. 
             elif len(get_close_matches(vocabulary, mydata.keys())) > 0:
                 yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(vocabulary, mydata.keys())[0])
                 if yn == "Y":
