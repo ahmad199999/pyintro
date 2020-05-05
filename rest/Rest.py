@@ -25,9 +25,9 @@ Ditt Val:''')
         mydata = json.load(open("data.json")) #Här skapar vi ett variable och inne i variable öppnar våran json fil som vi har. Vi öppnar den i json.load för att kunna 
         #roppa efter den del av data som vi vill.
         
-        def translate(vocabulary):
-            vocabulary = vocabulary.lower()
-            if vocabulary in mydata:
+        def translate(vocabulary): #Här skapar vi ett funktion 
+            vocabulary = vocabulary.lower() #Variable som är lika med små bokstav,.
+            if vocabulary in mydata: 
                 return mydata[vocabulary]
             elif len(get_close_matches(vocabulary, mydata.keys())) > 0:
                 yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(vocabulary, mydata.keys())[0])
@@ -36,7 +36,7 @@ Ditt Val:''')
                 elif yn == "N":
                     return "the vocabulary may not exit in dictionary or dubble check the word."
                 else:
-                    return " We did not understand your word"
+                    return " We did not understand your word" 
             else:
                  return "the vocabulary may not exit in dictionary or dubble check the word."
         vocabulary = input("Enter an English word:  ")
